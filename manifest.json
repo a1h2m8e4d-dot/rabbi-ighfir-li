@@ -1,0 +1,10 @@
+{
+  "name": "ربي اغفر لي",
+  "short_name": "ربي اغفر لي",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#eef6f1",
+  "theme_color": "#3a7d44",
+  "lang": "ar",
+  "dir": "rtl"
+}
