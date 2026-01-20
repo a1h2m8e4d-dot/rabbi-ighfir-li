@@ -70,3 +70,24 @@ button:disabled {
 .hidden {
   display: none;
 }
+
+.install {
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  padding: 10px;
+}
+
+#installBtn {
+  width: 100%;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
