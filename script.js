@@ -25,3 +25,25 @@ cards.forEach(card => {
     }
   });
 });
+
+let deferredPrompt;
+const installBox = document.getElementById("installBox");
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBox.classList.remove("hidden");
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  const result = await deferredPrompt.userChoice;
+
+  if (result.outcome === "accepted") {
+    installBox.classList.add("hidden");
+    deferredPrompt = null;
+  }
+});
