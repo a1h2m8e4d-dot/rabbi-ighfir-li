@@ -13,9 +13,64 @@
   
   <p>ورد السكينة اليومي</p>
 </header>
+<body>
+
+  <!-- زر تثبيت التطبيق (سيبه زي ما هو) -->
   <div id="installBox" class="install hidden">
-  <button id="installBtn">ثبّت التطبيق 📱</button>
-</div>
+    <button id="installBtn">ثبّت التطبيق 📱</button>
+  </div>
+
+  <!-- كل التطبيق -->
+  <div id="app">
+
+    <!-- الهيدر -->
+    <header class="header">
+      <h1>ربي اغفر لي</h1>
+      <p>ورد السكينة اليومي</p>
+    </header>
+
+    <!-- الصفحات -->
+    <main class="content">
+
+      <!-- صفحة الورد -->
+      <section class="page active" id="page-ward">
+        <!-- كروت الورد كلها هنا -->
+      </section>
+
+      <!-- صفحة الصلاة -->
+      <section class="page" id="page-prayer">
+        <h3>مواقيت الصلاة</h3>
+        <p>سيتم إضافتها قريبًا</p>
+      </section>
+
+      <!-- صفحة الإنجازات -->
+      <section class="page" id="page-achievements">
+        <h3>إنجازاتي</h3>
+        <p>لا توجد إنجازات بعد</p>
+      </section>
+
+      <!-- صفحة الدعم -->
+      <section class="page" id="page-support">
+        <h3>دعم التطبيق</h3>
+        <p>جزاك الله خيرًا 🤍</p>
+        <strong>01022766840</strong>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- القائمة السفلية -->
+  <nav class="bottom-nav">
+    <button class="active" data-target="page-ward">الورد</button>
+    <button data-target="page-prayer">الصلاة</button>
+    <button data-target="page-achievements">إنجازاتي</button>
+    <button data-target="page-support">دعم</button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+
 
 <main class="content">
 
@@ -84,5 +139,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
