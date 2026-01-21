@@ -130,3 +130,41 @@ button:disabled {
 .content {
   padding-bottom: 80px;
 }
+
+.support-text {
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.support-box {
+  background: #f1f8f3;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.support-box span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.support-box button {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.copy-msg {
+  text-align: center;
+  margin-top: 12px;
+  color: #2e7d32;
+  font-weight: bold;
+}
