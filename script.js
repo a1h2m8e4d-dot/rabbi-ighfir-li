@@ -62,3 +62,39 @@ if (copyBtn) {
     });
   });
 }
+
+// عناصر الإنجازات
+const wardCountEl = document.getElementById("wardCount");
+const daysCountEl = document.getElementById("daysCount");
+const quranKhatmEl = document.getElementById("quranKhatm");
+const addKhatmBtn = document.getElementById("addKhatmBtn");
+
+// تحميل القيم
+let wardCount = Number(localStorage.getItem("wardCount")) || 0;
+let daysCount = Number(localStorage.getItem("daysCount")) || 0;
+let quranKhatm = Number(localStorage.getItem("quranKhatm")) || 0;
+
+// عرض القيم
+if (wardCountEl) wardCountEl.textContent = wardCount;
+if (daysCountEl) daysCountEl.textContent = daysCount;
+if (quranKhatmEl) quranKhatmEl.textContent = quranKhatm;
+
+// حساب أيام الاستخدام (مرة واحدة في اليوم)
+const lastVisit = localStorage.getItem("lastVisit");
+const today = new Date().toDateString();
+
+if (lastVisit !== today) {
+  daysCount++;
+  localStorage.setItem("daysCount", daysCount);
+  localStorage.setItem("lastVisit", today);
+  if (daysCountEl) daysCountEl.textContent = daysCount;
+}
+
+// زر ختم القرآن
+if (addKhatmBtn) {
+  addKhatmBtn.addEventListener("click", () => {
+    quranKhatm++;
+    localStorage.setItem("quranKhatm", quranKhatm);
+    quranKhatmEl.textContent = quranKhatm;
+  });
+}
