@@ -168,3 +168,34 @@ button:disabled {
   color: #2e7d32;
   font-weight: bold;
 }
+
+.achievement-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.achievement-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.achievement-card strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 22px;
+  color: #2e7d32;
+}
+
+.achievement-card button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
