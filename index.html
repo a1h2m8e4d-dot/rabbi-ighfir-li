@@ -4,23 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ربي اغفر لي</title>
-<link rel="manifest" href="manifest.json">
+
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header class="header">
-  <h1>ربي اغفر لي</h1>
-  
-  <p>ورد السكينة اليومي</p>
-</header>
+
 <body>
 
-  <!-- زر تثبيت التطبيق (سيبه زي ما هو) -->
+  <!-- زر تثبيت التطبيق -->
   <div id="installBox" class="install hidden">
     <button id="installBtn">ثبّت التطبيق 📱</button>
   </div>
 
-  <!-- كل التطبيق -->
+  <!-- التطبيق -->
   <div id="app">
 
     <!-- الهيدر -->
@@ -29,12 +25,73 @@
       <p>ورد السكينة اليومي</p>
     </header>
 
-    <!-- الصفحات -->
+    <!-- المحتوى -->
     <main class="content">
 
       <!-- صفحة الورد -->
       <section class="page active" id="page-ward">
-        <!-- كروت الورد كلها هنا -->
+
+        <section class="card" data-max="1">
+          <h3>الاستفتاح</h3>
+          <p>سورة الفاتحة</p>
+          <span class="count">0 / 1</span>
+          <button>تم</button>
+        </section>
+
+        <section class="card" data-max="33">
+          <h3>الاستغفار</h3>
+          <p>أستغفر الله العظيم وأتوب إليه</p>
+          <span class="count">0 / 33</span>
+          <button>سبّح</button>
+        </section>
+
+        <section class="card" data-max="10">
+          <h3>الصلاة على النبي</h3>
+          <p>اللهم صلِّ وسلم على نبينا محمد</p>
+          <span class="count">0 / 10</span>
+          <button>صلِّ</button>
+        </section>
+
+        <section class="card" data-max="1">
+          <h3>التحصين</h3>
+          <p>
+            آية الكرسي<br>
+            الإخلاص ×3<br>
+            الفلق ×1<br>
+            الناس ×1
+          </p>
+          <span class="count">0 / 1</span>
+          <button>تم</button>
+        </section>
+
+        <section class="card" data-max="33">
+          <h3>الباقيات الصالحات</h3>
+          <p>سبحان الله، الحمد لله، لا إله إلا الله، الله أكبر</p>
+          <span class="count">0 / 33</span>
+          <button>سبّح</button>
+        </section>
+
+        <section class="card" data-max="10">
+          <p>سبحان الله وبحمده، سبحان الله العظيم</p>
+          <span class="count">0 / 10</span>
+          <button>سبّح</button>
+        </section>
+
+        <section class="card" data-max="1">
+          <h3>دعاء الختام</h3>
+          <p>
+            اللهم آتنا في الدنيا حسنة، وفي الآخرة حسنة، وقنا عذاب النار،
+            اللهم يا مقلب القلوب ثبت قلبي على دينك
+          </p>
+          <span class="count">0 / 1</span>
+          <button>تم</button>
+        </section>
+
+        <div id="finalMessage" class="final hidden">
+          🌸 تقبّل الله منك 🌸<br>
+          جعل الله هذا الورد سكينة لقلبك، ونورًا ليومك
+        </div>
+
       </section>
 
       <!-- صفحة الصلاة -->
@@ -57,7 +114,6 @@
       </section>
 
     </main>
-
   </div>
 
   <!-- القائمة السفلية -->
@@ -70,75 +126,5 @@
 
   <script src="script.js"></script>
 </body>
-
-
-<main class="content">
-
-  <section class="card" data-max="1">
-    <h3>الاستفتاح</h3>
-    <p>سورة الفاتحة</p>
-    <span class="count">0 / 1</span>
-    <button>تم</button>
-  </section>
-
-  <section class="card" data-max="33">
-    <h3>الاستغفار</h3>
-    <p>أستغفر الله العظيم وأتوب إليه</p>
-    <span class="count">0 / 33</span>
-    <button>سبّح</button>
-  </section>
-
-  <section class="card" data-max="10">
-    <h3>الصلاة على النبي</h3>
-    <p>اللهم صلِّ وسلم على نبينا محمد</p>
-    <span class="count">0 / 10</span>
-    <button>صلِّ</button>
-  </section>
-
-  <section class="card" data-max="1">
-    <h3>التحصين</h3>
-    <p>
-      آية الكرسي<br>
-      الإخلاص ×3<br>
-      الفلق ×1<br>
-      الناس ×1
-    </p>
-    <span class="count">0 / 1</span>
-    <button>تم</button>
-  </section>
-
-  <section class="card" data-max="33">
-    <h3>الباقيات الصالحات</h3>
-    <p>سبحان الله، الحمد لله، لا إله إلا الله، الله أكبر</p>
-    <span class="count">0 / 33</span>
-    <button>سبّح</button>
-  </section>
-
-  <section class="card" data-max="10">
-    <p>سبحان الله وبحمده، سبحان الله العظيم</p>
-    <span class="count">0 / 10</span>
-    <button>سبّح</button>
-  </section>
-
-  <section class="card" data-max="1">
-    <h3>دعاء الختام</h3>
-    <p>
-      اللهم آتنا في الدنيا حسنة، وفي الآخرة حسنة، وقنا عذاب النار،
-      اللهم يا مقلب القلوب ثبت قلبي على دينك
-    </p>
-    <span class="count">0 / 1</span>
-    <button>تم</button>
-  </section>
-
-  <div id="finalMessage" class="final hidden">
-    🌸 تقبّل الله منك 🌸<br>
-    جعل الله هذا الورد سكينة لقلبك، ونورًا ليومك، وطمأنينة لا تزول
-  </div>
-
-</main>
-  <script src="script.js"></script>
-</body>
 </html>
-
-
 
