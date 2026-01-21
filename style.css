@@ -199,3 +199,15 @@ button:disabled {
   border-radius: 20px;
   font-size: 14px;
 }
+
+.app-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin: 20px 0 10px;
+}
+
+.app-footer span {
+  color: #2e7d32;
+  font-weight: bold;
+}
