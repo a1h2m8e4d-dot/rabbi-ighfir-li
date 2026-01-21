@@ -19,12 +19,19 @@ cards.forEach(card => {
       finished++;
     }
 
-    if (finished === cards.length) {
-      document.getElementById("finalMessage").classList.remove("hidden");
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    }
-  });
-});
+   if (finished === cards.length) {
+  document.getElementById("finalMessage").classList.remove("hidden");
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+
+  // تسجيل إنجاز إكمال الورد
+  wardCount++;
+  localStorage.setItem("wardCount", wardCount);
+
+  // تحديث الرقم لو صفحة إنجازاتي مفتوحة
+  if (wardCountEl) {
+    wardCountEl.textContent = wardCount;
+  }
+}
 
 let deferredPrompt;
 const installBox = document.getElementById("installBox");
@@ -98,3 +105,4 @@ if (addKhatmBtn) {
     quranKhatmEl.textContent = quranKhatm;
   });
 }
+
