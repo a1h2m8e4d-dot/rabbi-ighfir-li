@@ -47,3 +47,18 @@ installBtn.addEventListener("click", async () => {
     deferredPrompt = null;
   }
 });
+
+const copyBtn = document.getElementById("copyCashBtn");
+const cashNumber = document.getElementById("cashNumber");
+const copyMsg = document.getElementById("copyMsg");
+
+if (copyBtn) {
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(cashNumber.textContent).then(() => {
+      copyMsg.classList.remove("hidden");
+      setTimeout(() => {
+        copyMsg.classList.add("hidden");
+      }, 2000);
+    });
+  });
+}
