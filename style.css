@@ -287,3 +287,101 @@ body {
   border-radius: 25px;
   margin-top: 15px;
 }
+
+/* كارت رمضان */
+.ramadan-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* الهيدر */
+.ramadan-header {
+  background: linear-gradient(135deg, #0f4c3a, #1a6b54);
+  color: white;
+  padding: 28px 20px 30px;
+  text-align: center;
+}
+
+.ramadan-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.ramadan-subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* العدّاد */
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.time-unit {
+  background: rgba(255,255,255,0.2);
+  padding: 10px 12px;
+  border-radius: 12px;
+  min-width: 70px;
+}
+
+.time-unit span {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.time-unit small {
+  font-size: 12px;
+}
+
+/* قسم الصلاة */
+.prayer-section {
+  padding: 20px;
+}
+
+.prayer-title {
+  text-align: center;
+  color: #0f4c3a;
+  margin-bottom: 15px;
+}
+
+.prayer-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.prayer-card:last-child {
+  border-bottom: none;
+}
+
+.prayer-name {
+  font-weight: bold;
+  color: #0f4c3a;
+}
+
+.prayer-time {
+  color: #c5a059;
+  font-weight: bold;
+}
+
+/* زر */
+.location-btn {
+  display: block;
+  margin: 20px auto 0;
+  background: #c5a059;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 14px;
+}
