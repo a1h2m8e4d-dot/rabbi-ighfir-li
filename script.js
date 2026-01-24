@@ -136,5 +136,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* =========================
+   عداد رمضان
+========================= */
+const ramadanDate = new Date("February 17, 2026 00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = ramadanDate - now;
+
+  if (distance < 0) {
+    document.getElementById("ramadanTitle").innerText = "رمضان كريم 🌙";
+    return;
+  }
+
+  document.getElementById("days").innerText =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  document.getElementById("hours").innerText =
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  document.getElementById("minutes").innerText =
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+}, 1000);
+
+/* =========================
+   مواقيت الصلاة
+========================= */
+async function fetchPrayerTimes() {
+  const city = "Cairo";
+  const country = "Egypt";
+  const apiUrl = `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=5`;
+
+  try {
+    const res = await fetch(apiUrl);
+    const data = await res.json();
+    const t = data.data.timings;
+
+    document.getElementById("prayer-list").innerHTML = `
+      <div class="prayer-card"><span class="prayer-name">الفجر</span><span class="prayer-time">${t.Fajr}</span></div>
+      <div class="prayer-card"><span class="prayer-name">الظهر</span><span class="prayer-time">${t.Dhuhr}</span></div>
+      <div class="prayer-card"><span class="prayer-name">العصر</span><span class="prayer-time">${t.Asr}</span></div>
+      <div class="prayer-card"><span class="prayer-name">المغرب</span><span class="prayer-time">${t.Maghrib}</span></div>
+      <div class="prayer-card"><span class="prayer-name">العشاء</span><span class="prayer-time">${t.Isha}</span></div>
+    `;
+  } catch {
+    document.getElementById("prayer-list").innerText =
+      "تعذر تحميل المواقيت";
+  }
+}
+
+fetchPrayerTimes();
+
 });
+
 
