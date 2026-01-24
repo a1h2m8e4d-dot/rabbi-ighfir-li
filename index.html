@@ -95,10 +95,37 @@
       </section>
 
       <!-- صفحة الصلاة -->
-      <section class="page" id="page-prayer">
-        <h3>مواقيت الصلاة</h3>
-        <p>سيتم إضافتها قريبًا</p>
-      </section>
+    <section class="page" id="page-prayer">
+
+  <div class="ramadan-container">
+
+    <div class="header-section">
+      <h2 id="ramadanTitle">🌙 أهلاً رمضان</h2>
+      <p>متبقي على الشهر الفضيل</p>
+
+      <div class="countdown-box">
+        <div class="time-unit"><span id="days">00</span><small>يوم</small></div>
+        <div class="time-unit"><span id="hours">00</span><small>ساعة</small></div>
+        <div class="time-unit"><span id="minutes">00</span><small>دقيقة</small></div>
+      </div>
+    </div>
+
+    <div class="prayer-times">
+      <h3 style="color:var(--primary-color)">🕌 مواقيت الصلاة (القاهرة)</h3>
+
+      <div id="prayer-list">
+        <p>جاري تحميل المواقيت...</p>
+      </div>
+
+      <button class="location-btn" onclick="fetchPrayerTimes()">
+        تحديث المواقيت
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
 
       <!-- صفحة الإنجازات -->
       <section class="page" id="page-achievements">
@@ -158,4 +185,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
