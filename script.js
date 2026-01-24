@@ -164,7 +164,7 @@ setInterval(() => {
    مواقيت الصلاة
 ========================= */
 async function fetchPrayerTimes() {
-  const city = "Cairo";
+  const city = "Qena";
   const country = "Egypt";
   const apiUrl = `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=5`;
 
@@ -189,5 +189,6 @@ async function fetchPrayerTimes() {
 fetchPrayerTimes();
 
 });
+
 
 
