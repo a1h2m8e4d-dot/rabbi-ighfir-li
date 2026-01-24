@@ -211,3 +211,79 @@ button:disabled {
   color: #2e7d32;
   font-weight: bold;
 }
+
+:root {
+  --primary-color: #0f4c3a;
+  --accent-color: #c5a059;
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+/* كارت موحد */
+.card,
+.ramadan-container,
+.page {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* هيدر متدرج */
+.header {
+  background: linear-gradient(135deg, var(--primary-color), #1a6b54);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 0 0 25px 25px;
+}
+
+/* عداد رمضان */
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.time-unit {
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 12px;
+  min-width: 70px;
+}
+
+.time-unit span {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* مواقيت الصلاة */
+.prayer-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.prayer-name {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.prayer-time {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.location-btn {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-top: 15px;
+}
