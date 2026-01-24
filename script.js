@@ -146,9 +146,11 @@ setInterval(() => {
   const distance = ramadanDate - now;
 
   if (distance < 0) {
-    document.getElementById("ramadanTitle").innerText = "رمضان كريم 🌙";
-    return;
-  }
+  document.querySelector(".ramadan-header").style.display = "none";
+  document.getElementById("ramadanDua").classList.remove("hidden");
+  return;
+}
+
 
   document.getElementById("days").innerText =
     Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -227,6 +229,7 @@ async function fetchPrayerTimes() {
 fetchPrayerTimes();
 
 });
+
 
 
 
