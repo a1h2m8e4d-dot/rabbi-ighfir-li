@@ -173,13 +173,51 @@ async function fetchPrayerTimes() {
     const data = await res.json();
     const t = data.data.timings;
 
-    document.getElementById("prayer-list").innerHTML = `
-      <div class="prayer-card"><span class="prayer-name">الفجر</span><span class="prayer-time">${t.Fajr}</span></div>
-      <div class="prayer-card"><span class="prayer-name">الظهر</span><span class="prayer-time">${t.Dhuhr}</span></div>
-      <div class="prayer-card"><span class="prayer-name">العصر</span><span class="prayer-time">${t.Asr}</span></div>
-      <div class="prayer-card"><span class="prayer-name">المغرب</span><span class="prayer-time">${t.Maghrib}</span></div>
-      <div class="prayer-card"><span class="prayer-name">العشاء</span><span class="prayer-time">${t.Isha}</span></div>
-    `;
+    const prayers = [
+      { name: "الفجر", time: t.Fajr },
+      { name: "الظهر", time: t.Dhuhr },
+      { name: "العصر", time: t.Asr },
+      { name: "المغرب", time: t.Maghrib },
+      { name: "العشاء", time: t.Isha }
+    ];
+
+    const now = new Date();
+    let nextPrayer = null;
+
+    const list = prayers.map(p => {
+      const [h, m] = p.time.split(":");
+      const prayerTime = new Date();
+      prayerTime.setHours(h, m, 0);
+
+      if (!nextPrayer && prayerTime > now) {
+        nextPrayer = { ...p, date: prayerTime };
+      }
+
+      return { ...p, date: prayerTime };
+    });
+
+    if (!nextPrayer) {
+      nextPrayer = list[0];
+      nextPrayer.date.setDate(nextPrayer.date.getDate() + 1);
+    }
+
+    document.getElementById("nextPrayerName").innerText = nextPrayer.name;
+
+    setInterval(() => {
+      const diff = nextPrayer.date - new Date();
+      const hrs = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("nextPrayerCountdown").innerText =
+        `${hrs} س ${mins} د`;
+    }, 1000);
+
+    document.getElementById("prayer-list").innerHTML = list.map(p => `
+      <div class="prayer-card ${p.name === nextPrayer.name ? "active" : ""}">
+        <span class="prayer-name">${p.name}</span>
+        <span class="prayer-time">${p.time}</span>
+      </div>
+    `).join("");
+
   } catch {
     document.getElementById("prayer-list").innerText =
       "تعذر تحميل المواقيت";
@@ -189,6 +227,7 @@ async function fetchPrayerTimes() {
 fetchPrayerTimes();
 
 });
+
 
 
 
