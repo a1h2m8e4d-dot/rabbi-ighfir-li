@@ -385,3 +385,36 @@ body {
   border-radius: 25px;
   font-size: 14px;
 }
+
+.next-prayer-box {
+  background: #f4f7f6;
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.next-prayer-box p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.next-prayer-box strong {
+  display: block;
+  margin: 6px 0;
+  font-size: 18px;
+  color: #0f4c3a;
+}
+
+.next-prayer-box span {
+  font-size: 14px;
+  color: #c5a059;
+  font-weight: bold;
+}
+
+/* إبراز الصلاة الحالية */
+.prayer-card.active {
+  background: #f9f6ee;
+  border-radius: 8px;
+}
