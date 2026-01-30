@@ -243,3 +243,23 @@ button:active {
   font-size: 14px;
   text-align: center;
 }
+
+.developer-footer {
+  text-align: center;
+  padding: 20px 10px 90px; /* علشان القائمة السفلية */
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.developer-footer strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00ffd5; /* نفس لون الستايل العصري */
+  letter-spacing: 0.5px;
+}
+
+.developer-footer span {
+  font-size: 13px;
+}
