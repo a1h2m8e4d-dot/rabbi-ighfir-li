@@ -162,3 +162,84 @@ button:active {
   display: none;
 }
 
+
+/* كرت رمضان */
+.ramadan-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 18px;
+  margin-bottom: 18px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,255,200,0.15);
+}
+
+.ramadan-card h3 {
+  margin: 0;
+}
+
+.ramadan-card .subtitle {
+  font-size: 13px;
+  opacity: 0.8;
+  margin: 6px 0 16px;
+}
+
+.ramadan-countdown {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.time-box {
+  flex: 1;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 10px 0;
+}
+
+.time-box span {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  color: #00ffd5;
+}
+
+.time-box small {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* كرت الصلاة */
+.prayer-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  border-radius: 22px;
+  padding: 16px;
+}
+
+.prayer-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.prayer-row:last-child {
+  border-bottom: none;
+}
+
+.prayer-row.active {
+  color: #00ffd5;
+  font-weight: bold;
+}
+
+/* الصلاة القادمة */
+.next-prayer {
+  background: rgba(0,255,213,0.15);
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  text-align: center;
+}
