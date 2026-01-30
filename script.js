@@ -122,19 +122,29 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      التنقل (القائمة السفلية)
   ========================= */
+const navButtons = document.querySelectorAll(".bottom-nav button");
+const pages = document.querySelectorAll(".page");
 
-  const navButtons = document.querySelectorAll(".bottom-nav button");
-  const pages = document.querySelectorAll(".page");
+navButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.target;
 
-  navButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      navButtons.forEach(b => b.classList.remove("active"));
-      pages.forEach(p => p.classList.remove("active"));
+    // تغيير الأزرار
+    navButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
 
-      btn.classList.add("active");
-      document.getElementById(btn.dataset.target).classList.add("active");
+    // إخفاء الصفحات
+    pages.forEach(page => {
+      page.classList.remove("active");
     });
+
+    // إظهار الصفحة المطلوبة (بتأخير بسيط للنعومة)
+    setTimeout(() => {
+      document.getElementById(target).classList.add("active");
+    }, 10);
   });
+});
+
 
   /* =========================
    عداد رمضان
@@ -307,4 +317,5 @@ async function loadPrayers() {
 }
 
 loadPrayers();
+
 
