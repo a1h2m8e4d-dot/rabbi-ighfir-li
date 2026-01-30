@@ -139,28 +139,32 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
    عداد رمضان
 ========================= */
-const ramadanDate = new Date("February 17, 2026 00:00:00").getTime();
+// ===== منطق رمضان =====
+const ramadanDate = new Date("2026-02-17T00:00:00").getTime();
+
+const ramadanCard = document.querySelector(".ramadan-card");
+const ramadanDuaCard = document.getElementById("ramadanDuaCard");
 
 setInterval(() => {
   const now = new Date().getTime();
-  const distance = ramadanDate - now;
+  const diff = ramadanDate - now;
 
-  if (distance < 0) {
-  document.querySelector(".ramadan-header").style.display = "none";
-  document.getElementById("ramadanDua").classList.remove("hidden");
-  return;
-}
+  // بعد دخول رمضان
+  if (diff <= 0) {
+    ramadanCard.classList.add("hidden");
+    ramadanDuaCard.classList.remove("hidden");
+    return;
+  }
 
-
-  document.getElementById("days").innerText =
-    Math.floor(distance / (1000 * 60 * 60 * 24));
-
-  document.getElementById("hours").innerText =
-    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-  document.getElementById("minutes").innerText =
-    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  // قبل رمضان
+  document.getElementById("ramadanDays").textContent =
+    Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("ramadanHours").textContent =
+    Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("ramadanMinutes").textContent =
+    Math.floor((diff / (1000 * 60)) % 60);
 }, 1000);
+
 
 /* =========================
    مواقيت الصلاة
@@ -303,3 +307,4 @@ async function loadPrayers() {
 }
 
 loadPrayers();
+
