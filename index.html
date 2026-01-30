@@ -109,46 +109,40 @@
   </p>
 </div>
 
-    <!-- الهيدر -->
-    <div class="ramadan-header">
-      <h2>🌙 أهلاً رمضان</h2>
-      <p class="ramadan-subtitle">متبقي على الشهر الفضيل</p>
+  <!-- كرت رمضان -->
+<div class="ramadan-card">
+  <h3>🌙 أهلًا رمضان</h3>
+  <p class="subtitle">متبقي على الشهر الفضيل</p>
 
-      <div class="countdown-box">
-        <div class="time-unit">
-          <span id="days">00</span>
-          <small>يوم</small>
-        </div>
-        <div class="time-unit">
-          <span id="hours">00</span>
-          <small>ساعة</small>
-        </div>
-        <div class="time-unit">
-          <span id="minutes">00</span>
-          <small>دقيقة</small>
-        </div>
-      </div>
+  <div class="ramadan-countdown">
+    <div class="time-box">
+      <span id="ramadanDays">00</span>
+      <small>يوم</small>
     </div>
-
-    <!-- مواقيت الصلاة -->
-    <div class="prayer-section">
-      <h3 class="prayer-title">🕌 مواقيت الصلاة (قنا)</h3>
-<div class="next-prayer-box">
-  <p>الصلاة القادمة</p>
-  <strong id="nextPrayerName">—</strong>
-  <span id="nextPrayerCountdown">--:--</span>
+    <div class="time-box">
+      <span id="ramadanHours">00</span>
+      <small>ساعة</small>
+    </div>
+    <div class="time-box">
+      <span id="ramadanMinutes">00</span>
+      <small>دقيقة</small>
+    </div>
+  </div>
 </div>
 
-      <div id="prayer-list">
-        <p>جاري تحميل المواقيت...</p>
-      </div>
+<!-- كرت مواقيت الصلاة -->
+<div class="prayer-card">
+  <h3>🕌 مواقيت الصلاة (قنا)</h3>
 
-      <button class="location-btn" onclick="fetchPrayerTimes()">
-        تحديث المواقيت
-      </button>
-    </div>
-
+  <div id="nextPrayerBox" class="next-prayer">
+    الصلاة القادمة:
+    <strong id="nextPrayerName">---</strong>
+    بعد
+    <span id="nextPrayerTime">--:--</span>
   </div>
+
+  <div id="prayerList"></div>
+</div>
 
 </section>
 
@@ -211,6 +205,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
