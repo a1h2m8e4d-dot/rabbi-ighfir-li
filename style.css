@@ -263,3 +263,19 @@ button:active {
 .developer-footer span {
   font-size: 13px;
 }
+
+/* أنيميشن الصفحات */
+.page {
+  display: none;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.page.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
