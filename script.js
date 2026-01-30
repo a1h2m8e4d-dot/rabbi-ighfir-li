@@ -234,3 +234,72 @@ fetchPrayerTimes();
 
 
 
+
+// ===== عداد رمضان =====
+const ramadanDate = new Date("2026-02-17T00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = ramadanDate - now;
+
+  if (diff <= 0) return;
+
+  document.getElementById("ramadanDays").textContent =
+    Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("ramadanHours").textContent =
+    Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("ramadanMinutes").textContent =
+    Math.floor((diff / (1000 * 60)) % 60);
+}, 1000);
+
+// ===== مواقيت الصلاة (قنا) =====
+async function loadPrayers() {
+  const res = await fetch(
+    "https://api.aladhan.com/v1/timingsByCity?city=Qena&country=Egypt&method=5"
+  );
+  const data = await res.json();
+  const t = data.data.timings;
+
+  const prayers = [
+    ["الفجر", t.Fajr],
+    ["الظهر", t.Dhuhr],
+    ["العصر", t.Asr],
+    ["المغرب", t.Maghrib],
+    ["العشاء", t.Isha]
+  ];
+
+  const now = new Date();
+  let nextPrayer = null;
+
+  const list = document.getElementById("prayerList");
+  list.innerHTML = "";
+
+  prayers.forEach(([name, time]) => {
+    const [h, m] = time.split(":");
+    const prayerTime = new Date();
+    prayerTime.setHours(h, m, 0);
+
+    const row = document.createElement("div");
+    row.className = "prayer-row";
+    row.innerHTML = `<span>${name}</span><span>${time}</span>`;
+
+    if (!nextPrayer && prayerTime > now) {
+      nextPrayer = { name, time, prayerTime };
+      row.classList.add("active");
+    }
+
+    list.appendChild(row);
+  });
+
+  if (nextPrayer) {
+    const diff = nextPrayer.prayerTime - now;
+    const mins = Math.floor(diff / 60000);
+
+    document.getElementById("nextPrayerName").textContent =
+      nextPrayer.name;
+    document.getElementById("nextPrayerTime").textContent =
+      `${mins} دقيقة`;
+  }
+}
+
+loadPrayers();
